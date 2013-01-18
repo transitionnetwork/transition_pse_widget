@@ -1,0 +1,3 @@
+<?php
+
+include_once('transition_pse_widget.features.inc');
