@@ -247,11 +247,94 @@ Other|Not a Transition project',
     ),
   );
 
+  // Exported field: field_website_home
+  $fields['project_pse-field_website_home'] = array(
+    'field_name' => 'field_website_home',
+    'type_name' => 'project_pse',
+    'display_settings' => array(
+      'weight' => '9',
+      'parent' => '',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'email_plain' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'email_html' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => '',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'none',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Website',
+      'weight' => '11',
+      'description' => 'Website for this submission.',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Is a Transition group project, or other?');
   t('Related initiative');
   t('Webmaster user');
+  t('Website');
 
   return $fields;
 }
