@@ -6,11 +6,6 @@
 function transition_pse_widget_user_default_roles() {
   $roles = array();
 
-  // Exported role: widget
-  $roles['widget'] = array(
-    'name' => 'widget',
-  );
-
   // Exported role: widget admin
   $roles['widget admin'] = array(
     'name' => 'widget admin',

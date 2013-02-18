@@ -656,11 +656,11 @@ function transition_pse_widget_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'PSE submissions needing moderation');
+  $handler->override_option('title', 'Project submissions needing moderation');
   $handler->override_option('header', '<p>New, unmoderated projects will appear for you below as people submit them via the project sharing widget associated with your account.</p>
 <p><strong>Not got your widget on your site yet? Want to make another one? <a href="/pse/widget/get">Get it here!</a></strong></p>');
   $handler->override_option('header_format', '1');
-  $handler->override_option('empty', 'There are currently no pending Project Sharing Engine widget submissions at present.');
+  $handler->override_option('empty', '<p>There are currently no pending project submissions.</p>');
   $handler->override_option('path', 'user/%/widget-moderation/new');
   $handler->override_option('menu', array(
     'type' => 'default tab',
@@ -671,7 +671,7 @@ function transition_pse_widget_views_default_views() {
   ));
   $handler->override_option('tab_options', array(
     'type' => 'tab',
-    'title' => 'PSE moderation',
+    'title' => 'Project moderation',
     'description' => '',
     'weight' => '0',
     'name' => 'navigation',
@@ -991,7 +991,7 @@ function transition_pse_widget_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('title', 'PSE projects approved');
+  $handler->override_option('title', 'Projects approved');
   $handler->override_option('header', 'Accepted projects from the Project Sharing Engine are lited below, please do edit them to improve their profile page.');
   $handler->override_option('empty', 'You have not approved any projects from the Project Sharing Engine widget yet, please check those needing moderation on the tab above.');
   $handler->override_option('style_plugin', 'table');
