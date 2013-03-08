@@ -17,44 +17,8 @@ function transition_pse_widget_views_default_views() {
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
-    'title' => array(
-      'label' => 'Project name',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'absolute' => 0,
-        'link_class' => '',
-        'alt' => '',
-        'rel' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'hide_alter_empty' => 1,
-      'link_to_node' => 1,
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Override',
-      ),
-    ),
-    'field_submission_initiative_nid' => array(
-      'label' => 'Related initiative',
+    'nid' => array(
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -80,8 +44,80 @@ function transition_pse_widget_views_default_views() {
       'empty_zero' => 0,
       'hide_alter_empty' => 1,
       'link_to_node' => 0,
-      'label_type' => 'widget',
-      'format' => 'default',
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'title' => array(
+      'label' => 'Project submission name',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<strong>[title]</strong>',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'link_to_node' => 0,
+      'exclude' => 0,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
+    ),
+    'field_submission_initiative_nid' => array(
+      'label' => 'Initiative',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => 'Near [field_submission_initiative_nid]',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'link_to_node' => 0,
+      'label_type' => 'custom',
+      'format' => 'plain',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -126,7 +162,7 @@ function transition_pse_widget_views_default_views() {
       'link_to_user' => 1,
       'overwrite_anonymous' => 0,
       'anonymous_text' => '',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'name',
       'table' => 'users',
       'field' => 'name',
@@ -136,10 +172,10 @@ function transition_pse_widget_views_default_views() {
       'relationship' => 'none',
     ),
     'created' => array(
-      'label' => 'Submitted at',
+      'label' => 'Submitted',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => 'By [name], [created]',
         'make_link' => 0,
         'path' => '',
         'absolute' => 0,
@@ -161,12 +197,46 @@ function transition_pse_widget_views_default_views() {
       'hide_empty' => 0,
       'empty_zero' => 0,
       'hide_alter_empty' => 1,
-      'date_format' => 'small',
+      'date_format' => 'time ago',
       'custom_date_format' => 'j M Y',
       'exclude' => 0,
       'id' => 'created',
       'table' => 'node',
       'field' => 'created',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'nothing' => array(
+      'label' => '',
+      'alter' => array(
+        'text' => '<div class="banner-container"><a class="banner_green grid-1" href="/node/[nid]">Review</a></div>',
+        'make_link' => 0,
+        'path' => '',
+        'absolute' => 0,
+        'link_class' => '',
+        'alt' => '',
+        'rel' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'hide_alter_empty' => 1,
+      'exclude' => 0,
+      'id' => 'nothing',
+      'table' => 'views',
+      'field' => 'nothing',
       'override' => array(
         'button' => 'Override',
       ),
@@ -339,7 +409,7 @@ function transition_pse_widget_views_default_views() {
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 20);
   $handler->override_option('use_pager', '1');
-  $handler->override_option('style_plugin', 'bulk');
+  $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'override' => 1,
@@ -347,13 +417,23 @@ function transition_pse_widget_views_default_views() {
     'order' => 'asc',
     'summary' => '',
     'columns' => array(
+      'nid' => 'nid',
       'title' => 'title',
+      'field_submission_initiative_nid' => 'field_submission_initiative_nid',
       'name' => 'name',
       'created' => 'created',
+      'nothing' => 'nothing',
     ),
     'info' => array(
+      'nid' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
       'title' => array(
         'sortable' => 0,
+        'separator' => '',
+      ),
+      'field_submission_initiative_nid' => array(
         'separator' => '',
       ),
       'name' => array(
@@ -364,228 +444,25 @@ function transition_pse_widget_views_default_views() {
         'sortable' => 0,
         'separator' => '',
       ),
+      'nothing' => array(
+        'separator' => '',
+      ),
     ),
     'default' => '-1',
-    'execution_type' => '1',
-    'max_performance' => 0,
-    'display_type' => '1',
-    'hide_selector' => 1,
-    'preserve_selection' => 1,
-    'display_result' => 1,
-    'merge_single_action' => 1,
-    'operations' => array(
-      'transition_pse_submission_reject_action' => array(
-        'selected' => 1,
-        'skip_confirmation' => 0,
-        'label' => 'Reject and delete',
-      ),
-      'transition_pse_submission_accept_action' => array(
-        'selected' => 1,
-        'skip_confirmation' => 0,
-        'label' => 'Accept and publish',
-      ),
-      'og_add_group_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'nodequeue_add_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_assign_owner_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_delete_node_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_mass_update-a27b9efabcd054685a549378b174ad11' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'system_message_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_ruleset_action_rules_set_1' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_script_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'imagecache_flush_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'imagecache_generate_all_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'imagecache_generate_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'og_make_private_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'og_make_public_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_make_sticky_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_make_unsticky_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_mass_update-c4d3b28efb86fd703619a50b74d43794' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_content_taxonomy_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_fields_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-        'settings' => array(
-          'php_code' => 0,
-          'show_tokens' => 0,
-          'display_fields' => array(
-            '_all_' => '_all_',
-          ),
-        ),
-      ),
-      'views_bulk_operations_taxonomy_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'views_bulk_operations_argument_selector_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_promote_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_mass_update-14de7d028b4bffdf2b4a266562ca18ac' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_mass_update-9c585624b9b3af0b4687d5f97f35e047' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_publish_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'system_goto_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'emfield_operations_reload' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'nodequeue_remove_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'og_remove_groups_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_unpromote_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'og_remove_group_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_mass_update-8ce21b08bb8e773d10018b484fe4815e' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_save_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'system_send_email_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_mass_update-0ccad85c1ebe4c9ceada1aa64293b080' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_unpublish_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'node_unpublish_by_keyword_action' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'auto_nodetitle_operations_update' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
-      'pathauto_node_update_alias_multiple-0d56f9c10fbb36ec3264abea71b6f416' => array(
-        'selected' => 0,
-        'skip_confirmation' => 0,
-        'label' => '',
-      ),
+  ));
+  $handler->override_option('row_plugin', 'panels_fields');
+  $handler->override_option('row_options', array(
+    'inline' => array(),
+    'separator' => '',
+    'hide_empty' => 0,
+    'layout' => 'threecol_33_34_33_stacked',
+    'change' => 'Change',
+    'regions' => array(
+      'title' => 'top',
+      'field_submission_initiative_nid' => 'middle',
+      'name' => 'left',
+      'created' => 'left',
+      'nothing' => 'right',
     ),
   ));
   $handler = $view->new_display('panel_pane', 'By moderation status pane', 'panel_pane_1');
@@ -994,7 +871,6 @@ function transition_pse_widget_views_default_views() {
   $handler->override_option('title', 'Projects approved');
   $handler->override_option('header', 'Accepted projects from the Project Sharing Engine are lited below, please do edit them to improve their profile page.');
   $handler->override_option('empty', 'You have not approved any projects from the Project Sharing Engine widget yet, please check those needing moderation on the tab above.');
-  $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'override' => 1,
@@ -1022,6 +898,8 @@ function transition_pse_widget_views_default_views() {
     ),
     'default' => '-1',
   ));
+  $handler->override_option('row_plugin', 'fields');
+  $handler->override_option('row_options', array());
   $handler->override_option('path', 'user/%/widget-moderation/accepted');
   $handler->override_option('menu', array(
     'type' => 'tab',

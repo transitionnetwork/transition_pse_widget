@@ -203,7 +203,7 @@ function transition_pse_widget_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_project_pse_pattern';
-  $strongarm->value = 'submissions/[title-raw]';
+  $strongarm->value = '';
   $export['pathauto_node_project_pse_pattern'] = $strongarm;
 
   $strongarm = new stdClass;
