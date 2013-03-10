@@ -11,7 +11,7 @@ function transition_pse_widget_user_default_permissions() {
     'name' => 'get widget code',
     'roles' => array(
       '0' => 'site administrator',
-      '1' => 'widget admin',
+      '1' => 'widget owner',
     ),
   );
 
@@ -21,7 +21,7 @@ function transition_pse_widget_user_default_permissions() {
     'roles' => array(
       '0' => 'site administrator',
       '1' => 'site editor',
-      '2' => 'widget admin',
+      '2' => 'widget owner',
     ),
   );
 

@@ -394,8 +394,10 @@ function transition_pse_widget_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'perm',
-    'perm' => 'get widget code',
+    'type' => 'role',
+    'role' => array(
+      18 => 18,
+    ),
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
