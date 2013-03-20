@@ -1178,26 +1178,6 @@ function transition_pse_widget_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'field_pse_moderate_value_many_to_one' => array(
-      'operator' => 'not',
-      'value' => array(
-        1 => '1',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'field_pse_moderate_value_many_to_one',
-      'table' => 'node_data_field_pse_moderate',
-      'field' => 'field_pse_moderate_value_many_to_one',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-      'reduce_duplicates' => 0,
-    ),
   ));
   $handler->override_option('access', array(
     'type' => 'none',
@@ -1413,8 +1393,8 @@ function transition_pse_widget_views_default_views() {
         'button' => 'Use default',
       ),
     ),
-    'field_aim_value' => array(
-      'label' => '',
+    'field_project_summary_value' => array(
+      'label' => 'Summary',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -1428,19 +1408,19 @@ function transition_pse_widget_views_default_views() {
         'suffix' => '',
         'target' => '',
         'help' => '',
-        'trim' => 1,
-        'max_length' => '400',
+        'trim' => 0,
+        'max_length' => '',
         'word_boundary' => 1,
         'ellipsis' => 1,
-        'html' => 1,
-        'strip_tags' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
       ),
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
       'hide_alter_empty' => 1,
       'link_to_node' => 0,
-      'label_type' => 'none',
+      'label_type' => 'widget',
       'format' => 'default',
       'multiple' => array(
         'group' => TRUE,
@@ -1449,9 +1429,9 @@ function transition_pse_widget_views_default_views() {
         'multiple_reversed' => FALSE,
       ),
       'exclude' => 0,
-      'id' => 'field_aim_value',
-      'table' => 'node_data_field_aim',
-      'field' => 'field_aim_value',
+      'id' => 'field_project_summary_value',
+      'table' => 'node_data_field_project_summary',
+      'field' => 'field_project_summary_value',
       'override' => array(
         'button' => 'Use default',
       ),
@@ -1587,7 +1567,7 @@ function transition_pse_widget_views_default_views() {
         'button' => 'Use default',
       ),
     ),
-    'field_aim_value' => array(
+    'field_project_summary_value' => array(
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
@@ -1602,12 +1582,12 @@ function transition_pse_widget_views_default_views() {
         'suffix' => '',
         'target' => '',
         'help' => '',
-        'trim' => 1,
-        'max_length' => '400',
+        'trim' => 0,
+        'max_length' => '',
         'word_boundary' => 1,
         'ellipsis' => 1,
-        'html' => 1,
-        'strip_tags' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
       ),
       'empty' => '',
       'hide_empty' => 0,
@@ -1623,9 +1603,9 @@ function transition_pse_widget_views_default_views() {
         'multiple_reversed' => FALSE,
       ),
       'exclude' => 0,
-      'id' => 'field_aim_value',
-      'table' => 'node_data_field_aim',
-      'field' => 'field_aim_value',
+      'id' => 'field_project_summary_value',
+      'table' => 'node_data_field_project_summary',
+      'field' => 'field_project_summary_value',
       'override' => array(
         'button' => 'Use default',
       ),
@@ -1684,26 +1664,6 @@ function transition_pse_widget_views_default_views() {
       'table' => 'node',
       'field' => 'type',
       'relationship' => 'none',
-    ),
-    'field_pse_moderate_value_many_to_one' => array(
-      'operator' => 'not',
-      'value' => array(
-        1 => '1',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'field_pse_moderate_value_many_to_one',
-      'table' => 'node_data_field_pse_moderate',
-      'field' => 'field_pse_moderate_value_many_to_one',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
     'field_themes_nid' => array(
       'operator' => 'or',
