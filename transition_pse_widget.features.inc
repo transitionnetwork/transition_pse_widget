@@ -55,7 +55,7 @@ function transition_pse_widget_rules_defaults() {
             '#weight' => 0,
             '#type' => 'condition',
             '#settings' => array(
-              'code' => 'return (arg(0) == \'pse\')',
+              'code' => 'return (arg(0) == \'pse\');',
               'vars' => array(),
               '#eval input' => array(
                 'token_rules_input_evaluator' => array(
